@@ -15,6 +15,7 @@ import { DeleteTaskComponent } from './Components/delete-task/delete-task.compon
 import { CompletedTaskComponent } from './Components/completed-task/completed-task.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ProcessTaskComponent } from './Components/process-task/process-task.component';
+import { BordersDirective } from './Directives/borders.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProcessTaskComponent } from './Components/process-task/process-task.com
     DeleteTaskComponent,
     CompletedTaskComponent,
     ProcessTaskComponent,
+    BordersDirective,
 
   ],
   imports: [
