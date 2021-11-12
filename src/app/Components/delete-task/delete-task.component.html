@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="alert alert-danger">
+        <h2>Are You Sure To Delete This Task ?..</h2>
+        <div class="card my-3">
+            <div class="card-header">
+                {{task.title}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{task.title}}</h5>
+                <p class="card-text">{{task.description}}</p>
+                <p class="card-text">Start At: {{task.startTime | date: "medium"}}</p>
+                <p class="card-text">End At: {{task.endTime | date: "medium"}}</p>
+                <button class="btn btn-danger" (click)="delete(task.id)">
+                    Yes
+                </button>
+                <button class="btn btn-default" (click)="negative()">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+    <input type="text" class="form-control" placeholder="Search For..." [(ngModel)]="SearchByWord">
+    <div class="card my-3" *ngFor="let task of tasks | filter: SearchByWord">
+        <div class="card-header">
+            {{task.title}}
+            <div>
+                <span class="modes badge bg-info " *ngIf="task.completed">
+                    Completed
+                </span>
+                <span class="modes badge bg-warning ml-2" *ngIf="task.inProcess">
+                    In Process
+                </span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{task.title}}</h5>
+            <p class="card-text">{{task.description}}</p>
+            <p class="card-text times">Start At: {{task.startTime | date: "medium"}}</p>
+            <p class="card-text times">End At:
+                {{task.endTime | date: "medium"}}</p>
+            <div class="controls mt-2">
+                <a href="#" [routerLink]="['/edit/', task.id]" class="btn btn-primary btn-sm">Edit</a>
+                <a href="#" [routerLink]="['/delete', task.id]" class="btn btn-danger btn-sm mx-2">Delete</a>
+            </div>
+        </div>
+    </div>
+    <div class="button">
+        <button class="btn btn-primary btn-sm my-3" [routerLink]="['/new']">Add New Task</button>
+    </div>
+</div>

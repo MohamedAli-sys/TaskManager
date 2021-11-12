@@ -1,0 +1,20 @@
+div.button {
+    display: flex;
+    justify-content: end;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.times {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+span.modes {
+    color: white;
+}

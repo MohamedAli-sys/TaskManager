@@ -1,0 +1,35 @@
+<div class="container">
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" novalidate *ngIf="taskRef != undefined">
+        <div class="mb-3">
+            <label>Title</label>
+            <input type="text" formControlName="title" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Description</label>
+            <textarea type="text" formControlName="description" class="form-control" required></textarea>
+        </div>
+        <div class="mb-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" formControlName="completed"
+                    [checked]="taskRef.completed == true">
+                <label class="form-check-label" for="inlineCheckbox1">Completed</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" formControlName="inProcess"
+                    [checked]="taskRef.completed == true">
+                <label class="form-check-label" for="inlineCheckbox2">In Process</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label>Start At</label>
+            <input type="datetime-local" formControlName="startTime" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>End At</label>
+            <input type="datetime-local" formControlName="endTime" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary" [disabled]="!taskForm.valid">Save</button>
+        </div>
+    </form>
+</div>
